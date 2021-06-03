@@ -23,8 +23,8 @@ def validate_login(func):
 
             user = User.objects.get(id=access_token_payload['user_id'])
 
-            access_expiration_delta  = 600
-            refresh_expiration_delta = 6000000
+            access_expiration_delta  = 6000000
+            refresh_expiration_delta = 60000000
             now = datetime.datetime.now().timestamp()
             if now > access_token_payload['iat'] + access_expiration_delta:
                 refresh_token_payload = jwt.decode(

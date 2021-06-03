@@ -194,11 +194,13 @@ class TaxiListView(View):
         departure_time           = request.GET.get('departure_time', '1900-01-01 23:00')
         price                    = request.GET.get('price', 60000)
         taxi_company             = request.GET.getlist('taxi_company', ['Dasul Taxi', 'Taxi Choi-gging', 'Art Transportation', 'Lama 운수', 'DaMo taxi', 'Muy bien Trans'])
-        sort                     = request.GET.get('sort', '-price')
+        sort                     = request.GET.get('sort', 'price')
 
         sort_list = {
-            'dep_time'      : '-course__departure_time',
-            'price'         : '-price'
+            'dep_time'      : 'course__departure_time',
+            'dep_time_late' : '-course__departure_time',
+            'price'         : 'price',
+            '-price'        : '-price'
         }
         sort_string    = sort_list[sort]
 
