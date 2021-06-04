@@ -17,9 +17,9 @@ class BookView(View):
     def post(self, request):
         try:
             data               = json.loads(request.body)
-            passenger_number   = data.get('passenger_number', None)
-            going_schedule_id  = data.get('going_schedule_id', None)
-            coming_schedule_id = data.get('coming_schedule_id', None)
+            passenger_number   = int(data.get('passenger_number', None))
+            going_schedule_id  = int(data.get('going_schedule_id', None))
+            coming_schedule_id = int(data.get('coming_schedule_id', None))
             user               = request.user
             
             schedule_ids = [ schedule_id for schedule_id in (going_schedule_id, coming_schedule_id) if schedule_id ]
@@ -72,7 +72,11 @@ class BookView(View):
                         'going_price'              : order.scheduleorder_set.all()[0].schedule.price,
                         'coming_taxi_company_name' : order.scheduleorder_set.all()[1].schedule.course.taxi_company.name if order.scheduleorder_set.count() == 2 else None,
                         'coming_taxi_company_logo' : order.scheduleorder_set.all()[1].schedule.course.taxi_company.logo_url if order.scheduleorder_set.count() == 2 else None,
-                        'coming_price'             : order.scheduleorder_set.all()[1].schedule.price if order.scheduleorder_set.count() == 2 else None
+                        'coming_price'             : order.scheduleorder_set.all()[1].schedule.price if order.scheduleorder_set.count() == 2 else None,
+                        'going_departure_time'     : order.scheduleorder_set.all()[0].schedule.course.departure_time,
+                        'going_arrival_time'       : order.scheduleorder_set.all()[0].schedule.course.arrival_time,
+                        'coming_departure_time'    : order.scheduleorder_set.all()[1].schedule.course.departure_time if order.scheduleorder_set.count() == 2 else None,
+                        'coming_arrival_time'      : order.scheduleorder_set.all()[1].schedule.course.arrival_time if order.scheduleorder_set.count() == 2 else None
                     } for order in orders ]
 
             return JsonResponse({'result': results}, status=200)
