@@ -1,4 +1,3 @@
-import time
 import random
 import json
 import datetime
@@ -254,5 +253,4 @@ class TaxiListView(View):
             }
             total_result.append(result)
 
-            time.sleep(0.25)
         return JsonResponse({"Message" : total_result}, status = 200)
