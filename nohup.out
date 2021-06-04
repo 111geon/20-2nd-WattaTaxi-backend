@@ -59,3 +59,13 @@ Unauthorized: /orders
 [2021-06-04 02:03:30 +0000] [72199] [INFO] Listening at: http://0.0.0.0:8000 (72199)
 [2021-06-04 02:03:30 +0000] [72199] [INFO] Using worker: sync
 [2021-06-04 02:03:30 +0000] [72200] [INFO] Booting worker with pid: 72200
+[2021-06-04 02:20:24 +0000] [72199] [CRITICAL] WORKER TIMEOUT (pid:72200)
+[2021-06-04 11:20:24 +0900] [72200] [INFO] Worker exiting (pid: 72200)
+[2021-06-04 02:20:25 +0000] [72258] [INFO] Booting worker with pid: 72258
+Bad Request: /users/signup
+[2021-06-04 02:21:06 +0000] [72199] [CRITICAL] WORKER TIMEOUT (pid:72258)
+[2021-06-04 11:21:06 +0900] [72258] [INFO] Worker exiting (pid: 72258)
+[2021-06-04 02:21:06 +0000] [72259] [INFO] Booting worker with pid: 72259
+[2021-06-04 02:21:22 +0000] [72199] [INFO] Handling signal: term
+[2021-06-04 11:21:22 +0900] [72259] [INFO] Worker exiting (pid: 72259)
+[2021-06-04 02:21:22 +0000] [72199] [INFO] Shutting down: Master
