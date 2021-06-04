@@ -19,9 +19,11 @@ class BookView(View):
             data               = json.loads(request.body)
             passenger_number   = int(data.get('passenger_number', None))
             going_schedule_id  = int(data.get('going_schedule_id', None))
-            coming_schedule_id = int(data.get('coming_schedule_id', None))
+            coming_schedule_id = data.get('coming_schedule_id', None)
             user               = request.user
             
+            coming_schedule_id = int(coming_schedule_id) if coming_schedule_id else None
+
             schedule_ids = [ schedule_id for schedule_id in (going_schedule_id, coming_schedule_id) if schedule_id ]
 
             for schedule_id in schedule_ids:

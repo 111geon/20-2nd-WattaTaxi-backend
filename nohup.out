@@ -78,3 +78,119 @@ Unauthorized: /users/userinfo
 Unauthorized: /users/userinfo
 Unauthorized: /taxis/reviews
 Unauthorized: /users/userinfo
+[2021-06-04 03:19:19 +0000] [73116] [INFO] Starting gunicorn 20.1.0
+[2021-06-04 03:19:19 +0000] [73116] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2021-06-04 03:19:19 +0000] [73116] [ERROR] Retrying in 1 second.
+[2021-06-04 03:19:20 +0000] [73116] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2021-06-04 03:19:20 +0000] [73116] [ERROR] Retrying in 1 second.
+[2021-06-04 03:19:21 +0000] [73116] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2021-06-04 03:19:21 +0000] [73116] [ERROR] Retrying in 1 second.
+[2021-06-04 03:19:22 +0000] [73116] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2021-06-04 03:19:22 +0000] [73116] [ERROR] Retrying in 1 second.
+[2021-06-04 03:19:23 +0000] [73116] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2021-06-04 03:19:23 +0000] [73116] [ERROR] Retrying in 1 second.
+[2021-06-04 03:19:24 +0000] [73116] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2021-06-04 03:23:15 +0000] [72874] [INFO] Handling signal: term
+[2021-06-04 12:23:16 +0900] [72875] [INFO] Worker exiting (pid: 72875)
+[2021-06-04 03:23:16 +0000] [72874] [INFO] Shutting down: Master
+[2021-06-04 03:24:55 +0000] [73319] [INFO] Starting gunicorn 20.1.0
+[2021-06-04 03:24:55 +0000] [73319] [INFO] Listening at: http://0.0.0.0:8000 (73319)
+[2021-06-04 03:24:55 +0000] [73319] [INFO] Using worker: sync
+[2021-06-04 03:24:55 +0000] [73320] [INFO] Booting worker with pid: 73320
+Internal Server Error: /taxis
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/taxis/views.py", line 207, in get
+    departure_date = datetime.datetime.strptime(departure_date_string, "%Y-%m-%d")
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '' does not match format '%Y-%m-%d'
+Internal Server Error: /orders
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/decorators.py", line 49, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/orders/views.py", line 22, in post
+    coming_schedule_id = int(data.get('coming_schedule_id', None))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Internal Server Error: /orders
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/decorators.py", line 49, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/orders/views.py", line 22, in post
+    coming_schedule_id = int(data.get('coming_schedule_id', None))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Internal Server Error: /orders
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/decorators.py", line 49, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/orders/views.py", line 22, in post
+    coming_schedule_id = int(data.get('coming_schedule_id', None))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+Internal Server Error: /taxis
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/taxis/views.py", line 207, in get
+    departure_date = datetime.datetime.strptime(departure_date_string, "%Y-%m-%d")
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '' does not match format '%Y-%m-%d'
+Internal Server Error: /orders
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/wattataxi/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/decorators.py", line 49, in wrapper
+    return func(self, request, *args, **kwargs)
+  File "/home/ubuntu/20-2nd-WattaTaxi-backend/orders/views.py", line 22, in post
+    coming_schedule_id = int(data.get('coming_schedule_id', None))
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+[2021-06-04 03:30:22 +0000] [73319] [INFO] Handling signal: term
+[2021-06-04 12:30:22 +0900] [73320] [INFO] Worker exiting (pid: 73320)
+[2021-06-04 03:30:22 +0000] [73319] [INFO] Shutting down: Master
